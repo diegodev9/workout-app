@@ -1,0 +1,19 @@
+// toast
+.toaster {
+  position: absolute;
+  top: 15px;
+  right: 0px;
+}
+
+.toast {
+  .toast-body, .btn-close {
+    color: #fff;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .toast.show {
+    width: unset
+  }
+}
+// toast
