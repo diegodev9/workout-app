@@ -72,6 +72,7 @@ guard :rspec, cmd: "bundle exec rspec" do
 
   watch(%r{^app/controllers/(.+)_(controller)\.rb$}) { "spec/features" } #added
   watch(%r{^app/models/(.+)\.rb$}) { "spec/features" } #added
+  watch(%r{^app/views/layouts/application.html.erb}) { "spec/features" }
 
   watch(rails.controllers) do |m|
     [

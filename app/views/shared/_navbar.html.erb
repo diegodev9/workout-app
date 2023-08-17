@@ -15,7 +15,11 @@
       </ul>
     </div>
     <div class="d-flex">
-      <%= link_to 'Sign up', new_user_registration_path %>
+      <% if user_signed_in? %>
+        <p class="me-2">Signed in as <%= "#{current_user.email}" %></p>
+      <% end %>
+      <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-success me-2' %>
+      <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-primary' %>
     </div>
   </div>
 </nav>
