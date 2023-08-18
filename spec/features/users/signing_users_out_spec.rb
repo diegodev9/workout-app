@@ -13,5 +13,8 @@ RSpec.describe 'User sign out', type: :feature do
     visit '/'
     click_link 'Sign out'
     expect(page).to have_content('Signed out successfully.')
+    expect(page).to have_content('Sign in')
+    expect(page).to have_content('Sign up')
+    expect(page).not_to have_content('Sign out')
   end
 end

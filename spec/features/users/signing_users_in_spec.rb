@@ -13,5 +13,8 @@ RSpec.describe 'Users sign in', type: :feature do
 
     expect(page).to have_content('Signed in successfully.')
     expect(page).to have_content("Signed in as #{user.email}")
+    expect(page).not_to have_content('Sign up')
+    expect(page).not_to have_content('Sign in')
+    expect(page).to have_content('Sign out')
   end
 end
