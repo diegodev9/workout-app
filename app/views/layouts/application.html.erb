@@ -12,19 +12,22 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
-    <% flash.each do |key, msg| %>
-      <div class="text-center alert alert-<%= key == 'notice' ? 'success' : 'danger' %>">
-        <%= msg %>
-      </div>
-    <% end %>
+    <header class="header">
+      <%= render 'shared/navbar' %>
+    </header>
+
     <main class="main">
+      <% flash.each do |key, msg| %>
+        <div class="text-center alert alert-<%= key == 'notice' ? 'success' : 'danger' %>">
+          <%= msg %>
+        </div>
+      <% end %>
       <div class="container">
         <%= yield %>
       </div>
     </main>
-    <footer class="footer">
 
+    <footer class="footer">
     </footer>
   </body>
 </html>

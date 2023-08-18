@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-12">
+    <%= form_with model: [current_user, @exercise], class: 'form-horizontal' do |f| %>
+      <% if @exercise.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@exercise.errors.count, 'error') %> prohibited this exercise from being savec:
+          </h2>
+          <ul>
+            <% @exercise.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <%= f.label :duration_in_min, 'Duration (min)', class: 'form-label-sm' %>
+          <%= f.number_field :duration_in_min, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <%= f.label :workout, 'Workout Details', class: 'form-label-sm' %>
+          <%= f.text_area :workout, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <%= f.label :workout_date, 'Activity date', class: 'form-label-sm' %>
+          <%= f.date_field :workout_date, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <%= f.submit class: 'btn btn-success' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
