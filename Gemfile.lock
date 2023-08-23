@@ -114,6 +114,8 @@ GEM
       rexml (~> 3.0)
       webrick (~> 1.7)
     cucumber-tag-expressions (4.1.0)
+    d3-rails (7.8.5)
+      railties (>= 3.1)
     database_cleaner (2.0.2)
       database_cleaner-active_record (>= 2, < 3)
     database_cleaner-active_record (2.1.0)
@@ -324,6 +326,7 @@ DEPENDENCIES
   byebug
   capybara (~> 3.39, >= 3.39.2)
   cucumber-rails
+  d3-rails (~> 7.8, >= 7.8.5)
   database_cleaner (~> 2.0, >= 2.0.2)
   devise
   factory_bot_rails (~> 6.2)

@@ -3,6 +3,9 @@ class ExercisesController < ApplicationController
 
   def index
     @exercises = current_user.exercises.all
+
+    @data_keys = @exercises.map{|exercise| exercise.workout_date.to_s}
+    @data_values = @exercises.map{|exercise| exercise.duration_in_min}
   end
 
   def new

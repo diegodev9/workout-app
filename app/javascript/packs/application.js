@@ -37,4 +37,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 import 'jquery/dist/jquery.min'
+import Chart from 'chart.js/auto'
+global.Chart = Chart
 import './custom'
