@@ -1,4 +1,36 @@
 <div class="row">
+  <% if @exercises %>
+    <h1>Listing Exercises</h1>
+
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Duration (min)</th>
+        <th>Workout details</th>
+        <th>Activity date</th>
+        <th colspan="3"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @exercises.each do |exercise| %>
+        <tr>
+          <td><%= exercise.duration_in_min %></td>
+          <td><%= truncate(exercise.workout, length: 100) %></td>
+          <td><%= exercise.workout_date %></td>
+          <td><%= link_to 'Show', user_exercise_path(current_user, exercise) %></td>
+          <td><%= link_to 'Edit', edit_user_exercise_path(current_user, exercise) %></td>
+          <td><%= link_to 'Destroy', user_exercise_path(current_user, exercise), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <br>
+  <% else %>
+    <div class="alert alert-danger message-front text-center" role="alert">
+      No workouts yet
+    </div>
+    <br>
+  <% end %>
   <div class="col-md-8 col-12">
     <%= link_to 'New Workout', new_user_exercise_path(current_user), class: 'btn btn-success' %>
   </div>
