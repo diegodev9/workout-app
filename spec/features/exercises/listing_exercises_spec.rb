@@ -26,4 +26,11 @@ RSpec.describe 'Listing exercises', type: :feature do
     expect(page).to have_content(exercise2.workout_date)
 
   end
+
+  scenario "Shows no exercises if none created" do
+    user.exercises.destroy_all
+    visit '/'
+    click_link 'My Lounge'
+    expect(page).to have_content('No workouts yet')
+  end
 end
