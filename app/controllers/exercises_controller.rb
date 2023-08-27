@@ -1,5 +1,5 @@
 class ExercisesController < ApplicationController
-  before_action :set_exercise, only: :show
+  before_action :set_exercise, only: %i[show edit update destroy]
 
   def index
     @exercises = current_user.exercises.all
@@ -16,6 +16,10 @@ class ExercisesController < ApplicationController
 
   end
 
+  def edit
+
+  end
+
   def create
     @exercise = current_user.exercises.build(exercise_params)
     puts params
@@ -25,6 +29,15 @@ class ExercisesController < ApplicationController
     else
       flash[:alert] = 'Exercise has not been created'
       render :new
+    end
+  end
+
+  def update
+    if @exercise.update(exercise_params)
+      redirect_to user_exercises_path(current_user, @exercise), notice: 'Exercise has been updated'
+    else
+      flash[:alert] = "Exercise has not been updated"
+      render :edit
     end
   end
 

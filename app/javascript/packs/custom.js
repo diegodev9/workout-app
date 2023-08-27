@@ -10,6 +10,7 @@ if($(location).attr("pathname").match(regex)) {
             data: {
                 labels: JSON.parse(ctx.canvas.dataset.labels),
                 datasets: [{
+                    label: 'Exercises',
                     data: JSON.parse(ctx.canvas.dataset.data),
                 }]
             },

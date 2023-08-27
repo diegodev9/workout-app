@@ -1,0 +1,11 @@
+<h1>
+  Edit Exercise for <%= current_user.full_name %>
+</h1>
+
+<%= render 'exercises/form', exercise: @exercise %>
+
+<div class="row">
+  <div class="col-md-6">
+    <%= link_to 'Back', user_exercises_path(current_user), class: 'btn btn-primary', id: 'new-xer-btn' %>
+  </div>
+</div>
