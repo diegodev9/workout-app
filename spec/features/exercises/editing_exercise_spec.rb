@@ -27,7 +27,7 @@ RSpec.describe 'Editing Exercise', type: :feature do
     # puts link
     # puts 'found' if find_link('', href: link2)
 
-    click_link('', href: link)
+    click_link('Edit', href: link)
 
     fill_in 'Duration', with: 45
     click_button 'Update Exercise'
