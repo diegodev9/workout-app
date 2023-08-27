@@ -6,7 +6,7 @@ RSpec.describe 'Listing exercises', type: :feature do
   let(:user) { create(:user) }
   let(:exercise1) { create(:exercise, user_id: user.id, workout_date: DateTime.now) }
   let(:exercise2) { create(:exercise, user_id: user.id, workout_date: DateTime.now) }
-  let(:exercise3) { create(:exercise, user_id: user.id, workout_date: 8.days.ago ) }
+  let(:exercise3) { create(:exercise, user_id: user.id, workout_date: 9.days.ago ) }
 
   before do
     sign_in user

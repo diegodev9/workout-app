@@ -41,6 +41,11 @@ class ExercisesController < ApplicationController
     end
   end
 
+  def destroy
+    @exercise.destroy
+    redirect_to user_exercises_path(current_user), notice: 'Exercise has been deleted'
+  end
+
   private
 
   def set_exercise
