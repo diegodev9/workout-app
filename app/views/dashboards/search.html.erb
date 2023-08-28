@@ -1,6 +1,9 @@
 <div class="container">
+  <div class="my-5">
+    <h2>Search Result</h2>
+  </div>
   <div class="row search-result">
-    <%= @athletes.each do |athlete| %>
+    <% @athletes.each do |athlete| %>
       <div class="offset-2 col-md-10 member">
         <%= athlete.full_name %>
       </div>
