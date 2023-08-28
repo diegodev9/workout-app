@@ -12,4 +12,17 @@ class User < ApplicationRecord
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def self.search_by_name(name)
+    names_array = name.split(' ')
+
+    if names_array.count == 1
+      where('first_name LIKE ?', "%#{names_array.first}%").or(where('last_name LIKE ?', "%#{names_array.first}%")).order(:first_name)
+    else
+      where('first_name LIKE ?', "%#{names_array.first}%")
+        .or(where('first_name LIKE ?', "%#{names_array.last}%"))
+        .or(where('last_name LIKE ?', "%#{names_array.first}%"))
+        .or(where('last_name LIKE ?', "%#{names_array.last}%"))
+    end
+  end
 end

@@ -13,6 +13,10 @@
           <%= link_to 'Athletes Den', '#', class: 'nav-link' %>
         </li>
       </ul>
+      <%= form_with url: dashboards_search_path, method: :post, class: 'd-flex' do |f| %>
+        <%= f.text_field :search_name, placeholder: 'Search', class: 'form-control me-2' %>
+        <%= f.submit 'Search', class: 'btn btn-outline-success' %>
+      <% end %>
     </div>
     <div class="d-flex">
       <% if user_signed_in? %>

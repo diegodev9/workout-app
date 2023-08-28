@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   resources :users do
     resources :exercises
   end
+
+  namespace :dashboards do
+    post :search
+  end
 end
