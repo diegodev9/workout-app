@@ -4,9 +4,9 @@ require 'support/devise'
 
 RSpec.describe 'Listing exercises', type: :feature do
   let(:user) { create(:user) }
-  let(:exercise1) { create(:exercise, user_id: user.id, workout_date: DateTime.now) }
-  let(:exercise2) { create(:exercise, user_id: user.id, workout_date: DateTime.now) }
-  let(:exercise3) { create(:exercise, user_id: user.id, workout_date: 9.days.ago ) }
+  let(:exercise1) { create(:exercise, workout: 'first', user_id: user.id, workout_date: DateTime.now) }
+  let(:exercise2) { create(:exercise, workout: 'second', user_id: user.id, workout_date: DateTime.now) }
+  let(:exercise3) { create(:exercise, workout: 'third', user_id: user.id, workout_date: 9.days.ago ) }
 
   before do
     sign_in user
