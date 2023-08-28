@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   namespace :dashboards do
     post :search
   end
+
+  resources :friendships, only: %i[show create destroy]
 end
