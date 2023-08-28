@@ -1,5 +1,5 @@
 class DashboardsController < ApplicationController
   def index
-    @athletes = User.all
+    @pagy,@athletes = pagy(User.all)
   end
 end

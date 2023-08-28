@@ -32,6 +32,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # adicionales
 gem 'autoprefixer-rails'
 gem 'devise'
+gem 'pagy', '~> 6.0', '>= 6.0.4'
 
 
 group :development, :test do
