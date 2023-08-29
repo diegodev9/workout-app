@@ -3,6 +3,7 @@ class ExercisesController < ApplicationController
 
   def index
     @exercises = current_user.exercises.all
+    @friends = current_user.friends
 
     @data_keys = @exercises.map{|exercise| exercise.workout_date.to_s}
     @data_values = @exercises.map{|exercise| exercise.duration_in_min}
