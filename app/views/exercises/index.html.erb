@@ -33,6 +33,7 @@
       <br>
     <% end %>
     <%= link_to 'New Workout', new_user_exercise_path(current_user), class: 'btn btn-success' %>
+    <canvas id="myChart" width="200px" height="100px" data-labels="<%= @data_keys %>" data-data="<%= @data_values %>" ></canvas>
   </div>
   <div class="col-md-4">
     <h2 class="text-center">My Friends</h2>
@@ -47,5 +48,4 @@
       </div>
     <% end %>
   </div>
-  <canvas id="myChart" width="200px" height="100px" data-labels="<%= @data_keys %>" data-data="<%= @data_values %>" ></canvas>
 </div>
