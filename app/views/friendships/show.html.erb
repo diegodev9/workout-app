@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-8">
+    <p id="notice"><%= notice %></p>
+  </div>
+
+  <h2><%= @friend.full_name %>'s Exercises</h2>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Duration (min)</th>
+      <th>Workout</th>
+      <th>Activity date</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <%= @exercises.each do |exercise| %>
+      <tr>
+        <td><%= exercise.duration_in_min %></td>
+        <td><%= truncate(exercise.workout, length: 100) %></td>
+        <td><%= exercise.workout_date %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <br>
+  <canvas id="myChart" width="200px" height="100px" data-labels="<%= @data_keys %>" data-data="<%= @data_values %>" ></canvas>
+
+  <%= link_to 'Back', user_exercises_path(current_user), class: 'btn btn-success' %>
+</div>

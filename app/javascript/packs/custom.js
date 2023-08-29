@@ -1,6 +1,6 @@
 //d3 chart
 
-let regex = /\/users\/\d+\/exercises$/i;
+let regex = /\/users\/\d+\/exercises$|\/friendships\/d+$/i;
 
 if($(location).attr("pathname").match(regex)) {
     document.addEventListener('turbolinks:load', () => {
