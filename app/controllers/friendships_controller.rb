@@ -19,6 +19,13 @@ class FriendshipsController < ApplicationController
     Friendship.create(friendship_params) unless current_user.follows_or_same?(friend)
   end
 
+  def destroy
+    @friendship = Friendship.find(params[:id])
+    unfollowed = @friendship.friend.user.full_name
+    @friendship.destroy
+    redirect_to user_exercises_path(current_user), notice: "#{unfollowed} unfollowed"
+  end
+
   private
 
   def friendship_params
