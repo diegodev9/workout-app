@@ -14,8 +14,7 @@ RSpec.describe 'Showing friend workout', type: :feature do
     exercise1
     exercise2
     sign_in user1
-    puts "#{user1.full_name} #{exercise1.workout} #{exercise1.user_id}"
-    puts "#{user2.full_name} #{exercise2.workout} #{exercise2.user_id}"
+
     friend = Friend.create(user_id: user2.id)
     @following = Friendship.create(user_id: user1.id, friend_id: friend.id)
   end

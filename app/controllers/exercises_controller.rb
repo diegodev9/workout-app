@@ -23,7 +23,6 @@ class ExercisesController < ApplicationController
 
   def create
     @exercise = current_user.exercises.build(exercise_params)
-    puts params
 
     if @exercise.save
       redirect_to user_exercise_path(current_user, @exercise), notice: 'Exercise has been created'

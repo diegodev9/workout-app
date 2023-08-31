@@ -3,10 +3,7 @@ class FriendshipsController < ApplicationController
 
   def show
     @friend = Friendship.find(params[:id]).friend.user
-
     @exercises = @friend.exercises
-    puts "#{@friend.id}" "#{@friend.full_name}"
-    puts @exercises.count
 
     @data_keys = @exercises.map{|exercise| exercise.workout_date.to_s}
     @data_values = @exercises.map{|exercise| exercise.duration_in_min}

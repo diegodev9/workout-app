@@ -18,7 +18,7 @@ RSpec.describe 'Unfollowing friend', type: :feature do
     visit '/'
     click_link 'My Lounge'
     href_ = "/friendships/#{@following.id}"
-    puts "#{Friendship.count} #{Friendship.first.user.full_name} #{Friendship.first.friend.user.full_name}"
+
     click_link('Unfollow', href: href_)
 
     expect(page).to have_content("#{user2.full_name} unfollowed")
